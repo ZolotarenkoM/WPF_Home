@@ -29,5 +29,21 @@ namespace WPF_HOME
         {
             Close();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Program include list of products and things bought by family Zolotarenko\n" +
+                            @"author: M.Zolotarenko", @"Information");
+        }
+
+        private void button_Select_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void button_Remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
