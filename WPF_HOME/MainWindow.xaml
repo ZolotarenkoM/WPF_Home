@@ -53,7 +53,7 @@
                     <Button x:Name="button_add_product" Content="Add" HorizontalAlignment="Left" Margin="646,39,0,0" VerticalAlignment="Top" Width="88" Height="38" Click="button_add_product_Click"/>
                     <Button x:Name="button_Remove" Content="Remove" HorizontalAlignment="Left" Margin="646,0,0,306" VerticalAlignment="Bottom" Width="88" Height="38" Click="button_Remove_Click"/>
                     <Button x:Name="button_Save" Content="Save" HorizontalAlignment="Left" Margin="738,84,0,0" VerticalAlignment="Top" Width="88" Height="38"/>
-                    <Button x:Name="button_Reset" Content="Reset" HorizontalAlignment="Left" Margin="738,39,0,0" VerticalAlignment="Top" Width="88" Height="38" RenderTransformOrigin="1.523,1.132"/>
+                    <Button x:Name="button_Reset" Content="Reset" HorizontalAlignment="Left" Margin="738,39,0,0" VerticalAlignment="Top" Width="88" Height="38" RenderTransformOrigin="1.523,1.132" Click="button_Reset_Click"/>
                     <Label Content="UAH" HorizontalAlignment="Left" Margin="391,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="35"/>
                 </Grid>
             </TabItem>

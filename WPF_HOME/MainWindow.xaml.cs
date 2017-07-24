@@ -21,6 +21,7 @@ namespace WPF_HOME
     /// </summary>
     public partial class MainWindow : Window
     {
+        double price;
         public MainWindow()
         {
             InitializeComponent();
@@ -60,6 +61,13 @@ namespace WPF_HOME
         private void button_Select_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void button_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            listView_Item.Items.Clear();
+            textBox_TotalPrice.Text = @"0";
+            price = 0;
         }
     }
 }
