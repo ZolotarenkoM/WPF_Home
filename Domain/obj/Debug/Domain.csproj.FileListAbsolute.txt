@@ -1,0 +1,5 @@
+D:\C#\web\WPF_HOME\Domain\bin\Debug\Domain.dll
+D:\C#\web\WPF_HOME\Domain\bin\Debug\Domain.pdb
+D:\C#\web\WPF_HOME\Domain\obj\Debug\Domain.dll
+D:\C#\web\WPF_HOME\Domain\obj\Debug\Domain.pdb
+D:\C#\web\WPF_HOME\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

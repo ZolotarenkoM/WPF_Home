@@ -10,3 +10,7 @@ D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME.Properties.Resources.resources
 D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME.csproj.GenerateResource.Cache
 D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME.exe
 D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME.pdb
+D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME.csprojResolveAssemblyReference.cache
+D:\C#\web\WPF_HOME\WPF_HOME\obj\Debug\WPF_HOME_MarkupCompile.lref
+D:\C#\web\WPF_HOME\WPF_HOME\bin\Debug\Domain.dll
+D:\C#\web\WPF_HOME\WPF_HOME\bin\Debug\Domain.pdb

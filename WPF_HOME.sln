@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_HOME", "WPF_HOME\WPF_HOME.csproj", "{E03B9204-DA82-4BED-8A69-2B1D9C9F7015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D504043D-446D-4D2E-AB8F-BDF88E0DBCC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session", "Session\Session.csproj", "{204F5DAC-9754-4A2B-BDA9-1F81A5326A0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +19,14 @@ Global
 		{E03B9204-DA82-4BED-8A69-2B1D9C9F7015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03B9204-DA82-4BED-8A69-2B1D9C9F7015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03B9204-DA82-4BED-8A69-2B1D9C9F7015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D504043D-446D-4D2E-AB8F-BDF88E0DBCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D504043D-446D-4D2E-AB8F-BDF88E0DBCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D504043D-446D-4D2E-AB8F-BDF88E0DBCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D504043D-446D-4D2E-AB8F-BDF88E0DBCC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204F5DAC-9754-4A2B-BDA9-1F81A5326A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204F5DAC-9754-4A2B-BDA9-1F81A5326A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204F5DAC-9754-4A2B-BDA9-1F81A5326A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204F5DAC-9754-4A2B-BDA9-1F81A5326A0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

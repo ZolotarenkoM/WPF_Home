@@ -1,0 +1,4 @@
+D:\C#\web\WPF_HOME\Session\bin\Debug\Session.dll
+D:\C#\web\WPF_HOME\Session\bin\Debug\Session.pdb
+D:\C#\web\WPF_HOME\Session\obj\Debug\Session.dll
+D:\C#\web\WPF_HOME\Session\obj\Debug\Session.pdb

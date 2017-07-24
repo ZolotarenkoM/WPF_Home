@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Domain;
 
 namespace WPF_HOME
 {
@@ -42,6 +43,21 @@ namespace WPF_HOME
         }
 
         private void button_Remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_add_product_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void comboBox_Select_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Select_Click(object sender, RoutedEventArgs e)
         {
 
         }
