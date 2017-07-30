@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Home_expenses
+namespace WPF_HOME
 {
     /// <summary>
     /// Class for saved log file
