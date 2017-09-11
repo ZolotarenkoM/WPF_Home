@@ -155,7 +155,8 @@ namespace Session
                         {
                             Product p = new Product
                             {
-                                Id = dr[0].ToString(),
+                                //Id = dr[0].ToString(),
+                                Id = Convert.ToInt32(dr[0]),
                                 Name = dr[1].ToString(),
                                 Price = float.Parse(dr[2].ToString()),
                                 Count = (int)dr[3],

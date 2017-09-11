@@ -5,3 +5,15 @@ D:\C#\web\WPF_HOME\Session\obj\Debug\Session.pdb
 D:\C#\web\WPF_HOME\Session\bin\Debug\Domain.dll
 D:\C#\web\WPF_HOME\Session\bin\Debug\Domain.pdb
 D:\C#\web\WPF_HOME\Session\obj\Debug\Session.csprojResolveAssemblyReference.cache
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\Session.dll
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\Session.pdb
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\Domain.dll
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\Domain.pdb
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\obj\Debug\Session.csprojResolveAssemblyReference.cache
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\obj\Debug\Session.dll
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\obj\Debug\Session.pdb
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\Session.dll.config
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\EntityFramework.dll
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\EntityFramework.xml
+C:\Users\mzol\Documents\project\WPF_Home-master\WPF_Home-master\Session\bin\Debug\EntityFramework.SqlServer.xml

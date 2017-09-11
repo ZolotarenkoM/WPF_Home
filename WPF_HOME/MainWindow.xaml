@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:other="clr-namespace:WPF_HOME"
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                             
         Title="Home expenses" Height="500" Width="831.746" WindowStartupLocation="CenterScreen">
@@ -23,77 +24,105 @@
                         <RowDefinition Height="61*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="126.667"/>
+                        <ColumnDefinition Width="710.333"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBox x:Name="textBox_Name_product"  HorizontalAlignment="Left" Height="23" Margin="16,48,0,0" TextWrapping="Wrap" Text="Продукти" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.708,1.162"/>
-                    <TextBox x:Name="textBox_Price_product" HorizontalAlignment="Left" Height="23" Margin="162,47,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.708,1.162"/>
-                    <DatePicker x:Name="dateTime_of_order" HorizontalAlignment="Left" Margin="162,95,0,0" VerticalAlignment="Top" Height="22" Width="123" RenderTransformOrigin="0.162,0.477" SelectedDateFormat="Long" FirstDayOfWeek="Monday" Cursor="SizeAll"/>
-                    <ComboBox x:Name="comboBox_type_things" HorizontalAlignment="Left" Margin="16,95,0,0" VerticalAlignment="Top" Width="120" ToolTip="" IsDropDownOpen="True" Height="22">
+                    <TextBox x:Name="textBox_Name_product"  HorizontalAlignment="Left" Height="23" Text="{Binding ElementName=comboBox_type_things, Path=Text}" Margin="17,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.708,1.162" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="textBox_Price_product" HorizontalAlignment="Left" Height="23" Margin="48,48,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.708,1.162" Grid.Column="1"/>
+                    <DatePicker x:Name="dateTime_of_order" HorizontalAlignment="Left" Margin="48,96,0,0" VerticalAlignment="Top" Height="22" Width="123" RenderTransformOrigin="0.162,0.477" SelectedDateFormat="Short" FirstDayOfWeek="Monday" Cursor="SizeAll" IsTodayHighlighted="False" SelectedDate="{x:Static sys:DateTime.Now}" Grid.Column="1"/>
+                    <ComboBox x:Name="comboBox_type_things" HorizontalAlignment="Left" Margin="17,96,0,0" VerticalAlignment="Top" Width="128" ToolTip="" IsDropDownOpen="False" Height="22" SelectedValue="Продукти" Grid.ColumnSpan="2" >
                         <ComboBoxItem Content="Продукти" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Авто" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дитина" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Одяг/Речі" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дорога" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Donation" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Заощадження" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Медицина" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дозвілля" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Комунальні платежі" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Гігієна" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Побут" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
-                    <TextBox x:Name="textBox_TotalPrice" HorizontalAlignment="Left" Height="23" Margin="439,94,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="77"/>
-                    <xctk:IntegerUpDown xctk:Name="CountOfProducts" Value="1" Minimum="1" HorizontalAlignment="Left" Height="22" Margin="331,95,0,0"  VerticalAlignment="Top" Width="56"/>
-                    <ListView x:Name="listView_Item"   HorizontalAlignment="Center" Height="273" Margin="16,145,10,0" VerticalAlignment="Top" Width="810" IsHitTestVisible="True" ItemsSource="{Binding MainWindow}">
+                    <TextBox x:Name="textBox_TotalPrice" HorizontalAlignment="Left" Height="23" Margin="312.333,94,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
+                    <!-- <xctk:IntegerUpDown xctk:Name="CountOfProducts" Value="1" Minimum="1" HorizontalAlignment="Left" Height="22" Margin="331,95,0,0"  VerticalAlignment="Top" Width="56"/> \-->
+                    <ListView x:Name="listView_Item"   HorizontalAlignment="Center" Height="273" Margin="16,145,11,0" VerticalAlignment="Top" Width="810" IsHitTestVisible="True" ItemsSource="{Binding MainWindow}" Grid.ColumnSpan="2">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
-                                    <GridViewColumn Header="Id" Width="2" ></GridViewColumn>
+                                    <GridViewColumn Header="Id" Width="0" DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
                                     <GridViewColumn Header="Name" Width="180"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
                                     <GridViewColumn Header="Price UAH" Width="85" DisplayMemberBinding="{Binding Path=Price}"></GridViewColumn>
                                     <GridViewColumn Header="Count" Width="85" DisplayMemberBinding="{Binding Path=Count}"></GridViewColumn>
                                     <GridViewColumn Header="Total Price" Width="85" DisplayMemberBinding="{Binding Path=TotalPrice}"></GridViewColumn>
                                     <GridViewColumn Header="Type" Width="180" DisplayMemberBinding="{Binding Path=Type}"></GridViewColumn>
-                                    <GridViewColumn Header="Date" Width="185" DisplayMemberBinding="{Binding Path=Date}"></GridViewColumn>
+                                    <GridViewColumn Header="Date" Width="190" DisplayMemberBinding="{Binding Path=Date, StringFormat=dd/MM/yyyy}"></GridViewColumn>
                                 </GridView.Columns>
                             </GridView>
                         </ListView.View>
                     </ListView>
                     <Label Content="Name" HorizontalAlignment="Left" Margin="16,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="42"/>
-                    <Label Content="Price" HorizontalAlignment="Left" Margin="204,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="36"/>
-                    <Label Content="Total Price" HorizontalAlignment="Left" Margin="439,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="65"/>
-                    <Button x:Name="button_add_product" Content="Add" HorizontalAlignment="Left" Margin="634,41,0,0" VerticalAlignment="Top" Width="88" Height="38" Click="button_add_product_Click"/>
-                    <Button x:Name="button_Remove" Content="Remove" HorizontalAlignment="Left" Margin="634,0,0,295" VerticalAlignment="Bottom" Width="88" Height="38" Click="button_Remove_Click"/>
-                    <Button x:Name="button_Save" Content="Save" HorizontalAlignment="Left" Margin="738,94,0,0" VerticalAlignment="Top" Width="88" Height="38"/>
-                    <Button x:Name="button_Reset" Content="Reset" HorizontalAlignment="Left" Margin="738,41,0,0" VerticalAlignment="Top" Width="88" Height="38" RenderTransformOrigin="1.523,1.132" Click="button_Reset_Click"/>
-                    <Label Content="UAH" HorizontalAlignment="Left" Margin="521,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="35"/>
-                    <Label Content="Count" HorizontalAlignment="Left" Margin="331,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="65"/>
+                    <Label Content="Price" HorizontalAlignment="Left" Margin="90,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="36" Grid.Column="1"/>
+                    <Label Content="Total Price" HorizontalAlignment="Left" Margin="312.333,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="65" Grid.Column="1"/>
+                    <Button x:Name="button_add_product" Content="Add" HorizontalAlignment="Left" Margin="508.333,56,0,0" VerticalAlignment="Top" Width="88" Height="38" Click="button_add_product_Click" Grid.Column="1"/>
+                    <Button x:Name="button_Remove" Content="Remove" HorizontalAlignment="Left" Margin="508.333,0,0,295" VerticalAlignment="Bottom" Width="88" Height="38" Click="button_Remove_Click" Grid.Column="1"/>
+                    <Button x:Name="button_Save" Content="Save" HorizontalAlignment="Left" Margin="611.333,99,0,0" VerticalAlignment="Top" Width="88" Height="38" Click="button_Save_Click" Grid.Column="1"/>
+                    <Button x:Name="button_Reset" Content="Reset" HorizontalAlignment="Left" Margin="611.333,56,0,0" VerticalAlignment="Top" Width="88" Height="38" RenderTransformOrigin="1.523,1.132" Click="button_Reset_Click" Grid.Column="1"/>
+                    <Label Content="UAH" HorizontalAlignment="Left" Margin="394.333,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="35" Grid.Column="1"/>
+                    <Label Content="Count" HorizontalAlignment="Left" Margin="204.333,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="65" Grid.Column="1"/>
+                    <TextBox x:Name="textBox_Count" HorizontalAlignment="Left" Height="23" Margin="210.333,95,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.708,1.162" Grid.Column="1"/>
+                    <Button x:Name="button_Exit" Content="Exit" HorizontalAlignment="Left" Margin="648.333,10,0,0" VerticalAlignment="Top" Width="51" Click="button_Exit_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Select">
                 <Grid x:Name="button_clear_tablebutton_clear_table_No_Name_" Background="#FFE5E5E5" Margin="-3,-4,3,-4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="105*"/>
+                        <ColumnDefinition Width="109*"/>
+                        <ColumnDefinition Width="711*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView x:Name="listView_select" HorizontalAlignment="Center" Height="288" Margin="10,125,5,0" VerticalAlignment="Top" Width="801" IsHitTestVisible="True" Grid.ColumnSpan="2">
+                    <ListView x:Name="listView_select" HorizontalAlignment="Center" Height="285" Margin="12,100,7,0" VerticalAlignment="Top" Width="801" IsHitTestVisible="True" Grid.ColumnSpan="2">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Id" Width="2"/>
-                                <GridViewColumn Header="Name" Width="180"/>
-                                <GridViewColumn Header="Price UAH" Width="85"/>
-                                <GridViewColumn Header="Count" Width="65"/>
-                                <GridViewColumn Header="Total Price" Width="95"/>
-                                <GridViewColumn Header="Type" Width="180"/>
-                                <GridViewColumn Header="Date" Width="185"/>
+                                <GridViewColumn Header="Id" Width="45" DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
+                                <GridViewColumn Header="Name" Width="140"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                                <GridViewColumn Header="Price UAH" Width="85" DisplayMemberBinding="{Binding Path=Price}"></GridViewColumn>
+                                <GridViewColumn Header="Count" Width="85" DisplayMemberBinding="{Binding Path=Count}"></GridViewColumn>
+                                <GridViewColumn Header="Total Price" Width="85" DisplayMemberBinding="{Binding Path=TotalPrice}"></GridViewColumn>
+                                <GridViewColumn Header="Type" Width="175" DisplayMemberBinding="{Binding Path=Type}"></GridViewColumn>
+                                <GridViewColumn Header="Date" Width="165" DisplayMemberBinding="{Binding Path=Date, StringFormat=dd/MM/yyyy}" ></GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <DatePicker x:Name="dateTimePicker_Select" HorizontalAlignment="Left" Margin="15,22,0,0" VerticalAlignment="Top" Height="22" Width="117"/>
-                    <ComboBox x:Name="comboBox_Select_Type" HorizontalAlignment="Left" Margin="172,22,0,0" VerticalAlignment="Top" Width="120" ToolTip="" IsDropDownOpen="True" Height="22" SelectionChanged="comboBox_Select_Type_SelectionChanged">
+                    <DatePicker x:Name="dateTimePicker_Select" HorizontalAlignment="Left" Margin="15,22,0,0" VerticalAlignment="Top" Height="22" Width="117" Grid.ColumnSpan="2" />    <!-- SelectedDate="{x:Static sys:DateTime.Now}" -->
+                    <ComboBox x:Name="comboBox_Select_Type" SelectedValue="Усі витрати" HorizontalAlignment="Left" Margin="63,22,0,0" VerticalAlignment="Top" Width="120" ToolTip="" IsDropDownOpen="False" Height="22" Grid.Column="1" >
+                        <!-- SelectionChanged="comboBox_Select_Type_SelectionChanged"-->
+                        <ComboBoxItem Content="Усі витрати" HorizontalAlignment="Left" Width="118"/>
                         <ComboBoxItem Content="Продукти" HorizontalAlignment="Left" Width="118"/>
-                        <ComboBoxItem Content="Усі покупки" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Авто" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дитина" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Одяг/Речі" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дорога" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Donation" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Заощадження" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Медицина" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Дозвілля" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Комунальні платежі" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Гігієна" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Побут" HorizontalAlignment="Left" Width="118"/>
                     </ComboBox>
-                    <TextBox x:Name="Total_Price_Select" HorizontalAlignment="Left" Height="28
-                             " Margin="174,83,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="104" FontSize="16"/>
-                    <Label Content="Total Price" HorizontalAlignment="Left" Margin="174,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="65"/>
-                    <Label Content="UAH" HorizontalAlignment="Left" Margin="283,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="26" Width="35"/>
-                    <CheckBox Content="Day" HorizontalAlignment="Left" Margin="15,69,0,0" VerticalAlignment="Top" IsChecked="True" Height="16" Width="37"/>
-                    <CheckBox Content="Mounth" HorizontalAlignment="Left" Margin="15,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.279,0.375" IsChecked="True" Height="16" Width="59"/>
-                    <Button x:Name="button_Select" Content="Select" HorizontalAlignment="Left" Margin="489,28,0,0" VerticalAlignment="Top" Width="93" Height="37" Click="button_Select_Click"/>
-                    <Button x:Name="button_Reset_Select" Content="Reset" HorizontalAlignment="Left" Margin="489,75,0,0" VerticalAlignment="Top" Width="93" Height="36"/>
-                    <Button x:Name="button_clear_table" Content="Clear table" HorizontalAlignment="Left" Margin="718,76,0,0" VerticalAlignment="Top" Width="93" Height="36"/>
-                    <Button x:Name="button_Select_Exit" Content="Exit" HorizontalAlignment="Left" Margin="603,27,0,0" VerticalAlignment="Top" Width="93" Height="37" Click="button_Select_Exit_Click"/>
-                    <Button x:Name="button_remove_from_db" Content="Remove" HorizontalAlignment="Left" Margin="603,75,0,0" VerticalAlignment="Top" Width="93" Height="36"/>
+                    <TextBox x:Name="Total_Price_Select" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="569,390,53,13" TextWrapping="Wrap" Text="0" Width="89" FontSize="16" FontWeight="Bold" TextAlignment="Center" Grid.Column="1" Background="White" IsReadOnly="True" MaxLines="1" TextOptions.TextHintingMode="Fixed" FontFamily="Sitka Text"/>
+                    <Label Content="Total Price" HorizontalAlignment="Left" Margin="484,390,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="24" Width="75" Grid.Column="1" FontWeight="Bold" FontSize="11" FontFamily="Sitka Text"/>
+                    <Label Content="UAH" HorizontalAlignment="Left" Margin="669,390,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.447,-0.731" Height="24" Width="35" Grid.Column="1" FontFamily="Sitka Text"/>
+                    <CheckBox x:Name="checkBox_day" Content="Day" HorizontalAlignment="Left" Margin="15,69,0,0" VerticalAlignment="Top" IsChecked="True" Height="16" Width="46"
+                              ToolTip="Set this checkbox, if you wish to select items specific date that you specify above" />
+                    <CheckBox x:Name="checkBox_Mounth" Content="Mounth" HorizontalAlignment="Left" Margin="85,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.279,0.375" IsChecked="True" Height="16" Width="71"
+                              ToolTip="Set this checkbox, if you wish to select items for the month" Grid.ColumnSpan="2"/>
+                    <Button x:Name="button_Select" Content="Select" HorizontalAlignment="Left" Margin="413,17,0,0" VerticalAlignment="Top" Width="84" Height="24" Click="button_Select_Click" Grid.Column="1"/>
+                    <Button x:Name="button_Reset_Select" Content="Reset" HorizontalAlignment="Left" Margin="413,51,0,0" VerticalAlignment="Top" Width="84" Height="24" Click="button_Reset_Select_Click" Grid.Column="1"/>
+                    <Button x:Name="button_clear_table" Content="Clear table" HorizontalAlignment="Left" Margin="515,17,0,0" VerticalAlignment="Top" Width="84" Height="24" Click="button_clear_table_Click" Background="#FFF09A9A" Grid.Column="1"/>
+                    <Button x:Name="button_Select_Exit" Content="Exit" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="83" Height="24" Click="button_Select_Exit_Click" Grid.Column="1"/>
+                    <Button x:Name="button_remove_from_db" Content="Remove" HorizontalAlignment="Left" Margin="515,51,0,0" VerticalAlignment="Top" Width="83" Height="24" Click="button_remove_from_db_Click" Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>
